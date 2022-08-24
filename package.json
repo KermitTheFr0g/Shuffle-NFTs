@@ -1,0 +1,11 @@
+{
+  "name": "shuffle-nfts",
+  "version": "1.0.0",
+  "description": "shuffle a folder of nft images and their respective metadata",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
