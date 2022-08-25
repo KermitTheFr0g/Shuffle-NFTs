@@ -20,12 +20,25 @@ $ npm install
 ### Prerequisites
 If the two folders `images` and `jsons` are not already in your project create both of these using the command.
 ```
-$ mkdir {images, jsons}
+$ mkdir images jsons
 ```
 Now place all of the NFT images into the `images` folder and then place all of the metadata into the `jsons` folder.
 
 ## Running the Script
+There are two commands that can be run.
+```sh
+$ npm run start
+```
+This command is what shuffles the NFTs that have been put into the folders.
+
+```sh
+$ npm run updater
+```
+This is the other command for updating information in the metadata.
+
 ### Shuffling NFTs
+Running the `npm run start` command will begin to shuffle the location and order of the nfts
+
 ### Changing MetaData
 
 ## Further Development
