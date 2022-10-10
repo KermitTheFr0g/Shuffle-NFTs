@@ -22,28 +22,25 @@ function removeHolderName(){
     return;
 }
 
-const images = fs.readdirSync(`./images`);
-const shuffleImages = shuffleArray(images);
+const jsons = fs.readdirSync('./jsons');
+const images = fs.readdirSync('./images');
 
-console.log(images);
-console.log(shuffleImages)
+const currentJsons = fs.readdirSync('./jsons');
+const shuffledJsons = shuffleArray(jsons);
 
-let i = 1;
-shuffleImages.forEach( image => {
-    // rename the image
-    fs.renameSync(`./images/${image}`, `./images/${i}-holder.png`);
+let i = 0;
 
-    // finds the json that relates to this image and renames it
-    const JSONname = image.split('.')[0];
-    fs.renameSync(`./jsons/${JSONname}.json`, `./jsons/${i}-holder.json`);
+try{
+    fs.mkdirSync('./shuffledJsons');
+    fs.mkdirSync('./shuffledImages');
+} catch(err){
+    console.error(err);
+}
 
-    delete shuffleImages[`${i}-holder`];
+currentJsons.forEach( nft => {
+    fs.renameSync(`./jsons/${nft}`, `./shuffledJsons/${shuffledJsons[i]}`);
+    fs.renameSync(`./images/${nft.split('.')[0]}.png`, `./shuffledImages/${shuffledJsons[i].split('.')[0]}.png`);
 
     i++
-
-    //let file = JSON.parse(fs.readFileSync(`./jsons/${i}-holder.json`));
-    //file.edition = i;
-    //file = JSON.stringify(file);
-    //fs.writeFileSync(`./jsons/${i}-holder.json`, file, 'utf-8');
-    //console.log(`${JSONname} -> ${i}`);
+    console.log(`Changed: ${nft} - ${shuffledJsons[i]}`);
 })
