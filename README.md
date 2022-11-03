@@ -40,6 +40,8 @@ This is the other command for updating information in the metadata.
 Running the `npm run start` command will begin to shuffle the location and order of the nfts
 
 ### Changing MetaData
+This is a little bit more difficult to do than simply running a command. Because of metadata all having different structures some more user input is required.
+
 
 ## Further Development
 Feel free to fork the project and make any changes you want. You can make the bot more complex by adding different replies for different types of tweets.
